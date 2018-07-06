@@ -25,13 +25,14 @@ public class ChatActivity extends Activity {
         Intent intent = getIntent();
         String acion = intent.getAction();
         String content = intent.getStringExtra(Const.CONTENT);
+        int count = intent.getIntExtra(Const.COUNT,-1);
         int flag = intent.getFlags();
         String type = intent.getType();
         
         Utils.log(intent);
         Utils.log("========================");
         Utils.log(new data(acion,content,flag,type));
-        tv.setText(content);
+        tv.setText(count + "/n" + content);
     }
     
     class data {

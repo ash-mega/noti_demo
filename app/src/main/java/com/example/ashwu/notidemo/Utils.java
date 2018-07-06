@@ -6,9 +6,7 @@
  */
 package com.example.ashwu.notidemo;
 
-import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -35,10 +33,5 @@ public class Utils {
     
     public static String currTimeString(long currMillis) {
         return df.format(new Date(currMillis));
-    }
-    
-    public static void toast(Context context,Object obj) {
-        String content = toString(obj);
-        Toast.makeText(context,content,Toast.LENGTH_SHORT).show();
     }
 }

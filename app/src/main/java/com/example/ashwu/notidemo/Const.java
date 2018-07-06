@@ -18,4 +18,6 @@ public class Const {
     public static final String TAG = "NotiDemo";
     
     public static final String CONTENT = "content";
+    
+    public static final String COUNT = "count";
 }
