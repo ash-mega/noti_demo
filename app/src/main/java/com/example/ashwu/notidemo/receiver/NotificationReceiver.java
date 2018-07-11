@@ -43,7 +43,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             default:
                 notification = NotificationUtil.getNotification(context,content);
         }
-        manager.notify(NotificationUtil.noti_id_dynamic,notification);
+//        manager.notify(NotificationUtil.noti_id_dynamic,notification);
     }
     
     private void log(Object any) {

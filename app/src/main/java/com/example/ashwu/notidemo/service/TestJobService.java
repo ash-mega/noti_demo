@@ -32,7 +32,7 @@ public class TestJobService extends JobService {
         JobInfo.Builder builder = new JobInfo.Builder(1,new ComponentName(getApplicationContext(),TestJobService.class));
         builder.setPeriodic(5);
         builder.setPersisted(true);
-        JobScheduler jobScheduler = (JobScheduler)this.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        JobScheduler jobScheduler = (JobScheduler)getSystemService(Context.JOB_SCHEDULER_SERVICE);
         if (jobScheduler != null) {
             jobScheduler.schedule(builder.build());
         }
