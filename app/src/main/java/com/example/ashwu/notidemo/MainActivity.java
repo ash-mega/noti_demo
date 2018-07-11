@@ -1,23 +1,18 @@
 package com.example.ashwu.notidemo;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
+
+import com.example.ashwu.notidemo.service.TestJobService;
 
 public class MainActivity extends Activity {
     
     @Override
+    @TargetApi(21)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-    
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-//        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-//            Intent intent = new Intent(Const.ACTION);
-//            sendBroadcast(intent);
-//            return true;
-//        }
-        return super.onTouchEvent(event);
+        startService(new Intent(this,TestJobService.class));
     }
 }

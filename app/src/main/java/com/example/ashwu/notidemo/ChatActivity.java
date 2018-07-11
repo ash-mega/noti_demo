@@ -29,9 +29,6 @@ public class ChatActivity extends Activity {
         int flag = intent.getFlags();
         String type = intent.getType();
         
-        Utils.log(intent);
-        Utils.log("========================");
-        Utils.log(new data(acion,content,flag,type));
         tv.setText(count + "/n" + content);
     }
     

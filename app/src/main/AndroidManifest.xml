@@ -3,6 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.example.ashwu.notidemo">
 	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 	<application
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
@@ -17,8 +18,11 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".ChatActivity"/>
+		<activity
+			android:name=".OnePxActivity"
+			android:theme="@style/OnePx"/>
 		<receiver
-			android:name=".NotificationReceiver"
+			android:name=".receiver.NotificationReceiver"
 			android:enabled="true"
 			android:exported="true">
 			<intent-filter>
@@ -26,5 +30,11 @@
 				<action android:name="RECEIVE_MSG_V4"/>
 			</intent-filter>
 		</receiver>
+		<service
+			android:name=".service.KeepAliveJobService"
+			android:permission="android.permission.BIND_JOB_SERVICE"/>
+		<service
+			android:name=".service.TestJobService"
+			android:permission="android.permission.BIND_JOB_SERVICE"/>
 	</application>
 </manifest>
